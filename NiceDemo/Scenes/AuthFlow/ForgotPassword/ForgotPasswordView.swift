@@ -45,6 +45,8 @@ class ForgotPasswordView: UIView {
         logoImageView.clipsToBounds = true
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(logoImageView)
+        
+        guard let logoImageView = logoImageView else { return }
         if #available(iOS 11.0, *), DeviceType.hasTopNotch {
             NSLayoutConstraint(item: logoImageView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 44).isActive = true
         }
@@ -65,6 +67,9 @@ class ForgotPasswordView: UIView {
         emailTextField.delegate = self
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emailTextField)
+        
+        guard let emailTextField = emailTextField else { return }
+        
         NSLayoutConstraint(item: emailTextField, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true
@@ -89,6 +94,9 @@ class ForgotPasswordView: UIView {
         descriptionLabel.numberOfLines = 0
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(descriptionLabel)
+        
+        guard let descriptionLabel = descriptionLabel else { return }
+        
         NSLayoutConstraint(item: descriptionLabel, attribute: .bottom, relatedBy: .equal, toItem: emailTextField, attribute: .top, multiplier: 1.0, constant: -24).isActive = true
         NSLayoutConstraint(item: descriptionLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: descriptionLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true
@@ -104,6 +112,9 @@ class ForgotPasswordView: UIView {
         submitButton.addTarget(self, action: #selector(submitButtonTapped(_:)), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(submitButton)
+        
+        guard let submitButton = submitButton else { return }
+        
         if #available(iOS 11.0, *), DeviceType.hasTopNotch {
             NSLayoutConstraint(item: submitButton, attribute: .bottom, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
         }

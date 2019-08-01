@@ -48,6 +48,9 @@ class SignInView: UIView {
         logoImageView.clipsToBounds = true
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(logoImageView)
+        
+        guard let logoImageView = logoImageView else { return }
+        
         if #available(iOS 11.0, *), DeviceType.hasTopNotch {
             NSLayoutConstraint(item: logoImageView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 44).isActive = true
         }
@@ -69,6 +72,9 @@ class SignInView: UIView {
         emailTextField.delegate = self
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emailTextField)
+        
+        guard let emailTextField = emailTextField else { return }
+        
         NSLayoutConstraint(item: emailTextField, attribute: .top, relatedBy: .equal, toItem: logoImageView, attribute: .bottom, multiplier: 1.0, constant: 40).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true
@@ -92,6 +98,9 @@ class SignInView: UIView {
         passwordTextField.textContentType = UITextContentType(rawValue: "")
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(passwordTextField)
+        
+        guard let passwordTextField = passwordTextField else { return }
+        
         NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1.0, constant: 8).isActive = true
         NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true
@@ -115,6 +124,9 @@ class SignInView: UIView {
         forgotPasswordButton.addTarget(self, action: #selector(forgotButtonTapped(_:)), for: .touchUpInside)
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(forgotPasswordButton)
+        
+        guard let forgotPasswordButton = forgotPasswordButton else { return }
+        
         if #available(iOS 11.0, *), DeviceType.hasTopNotch {
             NSLayoutConstraint(item: forgotPasswordButton, attribute: .bottom, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
         }
@@ -140,6 +152,9 @@ class SignInView: UIView {
         signInButton.addTarget(self, action: #selector(signInButtonTapped(_:)), for: .touchUpInside)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(signInButton)
+        
+        guard let signInButton = signInButton else { return }
+        
         NSLayoutConstraint(item: signInButton, attribute: .bottom, relatedBy: .equal, toItem: forgotPasswordButton, attribute: .top, multiplier: 1.0, constant: -8).isActive = true
         NSLayoutConstraint(item: signInButton, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: signInButton, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true

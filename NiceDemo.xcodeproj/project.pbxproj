@@ -1021,7 +1021,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B375T6ZNZC;
+				DEVELOPMENT_TEAM = ZXYSZCCRU7;
 				INFOPLIST_FILE = "$(SRCROOT)/NiceDemo/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1037,7 +1037,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B375T6ZNZC;
+				DEVELOPMENT_TEAM = ZXYSZCCRU7;
 				INFOPLIST_FILE = "$(SRCROOT)/NiceDemo/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

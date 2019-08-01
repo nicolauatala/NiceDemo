@@ -49,6 +49,9 @@ class DogBreedTableViewCell: UITableViewCell {
         iconImageViewContainer.clipsToBounds = true
         iconImageViewContainer.layer.cornerRadius = size / 2
         contentView.addSubview(iconImageViewContainer)
+        
+        guard let iconImageViewContainer = iconImageViewContainer else { return }
+        
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: -10).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: 16).isActive = true
@@ -58,6 +61,9 @@ class DogBreedTableViewCell: UITableViewCell {
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.clipsToBounds = true
         iconImageViewContainer.addSubview(iconImageView)
+        
+        guard let iconImageView = iconImageView else { return }
+        
         NSLayoutConstraint(item: iconImageView, attribute: .top, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: iconImageView, attribute: .leading, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .leading, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: iconImageView, attribute: .bottom, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .bottom, multiplier: 1.0, constant: -10).isActive = true
@@ -69,6 +75,9 @@ class DogBreedTableViewCell: UITableViewCell {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         contentView.addSubview(titleLabel)
+        
+        guard let titleLabel = titleLabel else { return }
+        
         NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .trailing, multiplier: 1.0, constant: 12).isActive = true
         NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1.0, constant: -10).isActive = true
@@ -79,6 +88,9 @@ class DogBreedTableViewCell: UITableViewCell {
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         contentView.addSubview(subtitleLabel)
+        
+        guard let subtitleLabel = subtitleLabel else { return }
+        
         NSLayoutConstraint(item: subtitleLabel, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: -10).isActive = true
         NSLayoutConstraint(item: subtitleLabel, attribute: .leading, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .trailing, multiplier: 1.0, constant: 12).isActive = true
         NSLayoutConstraint(item: subtitleLabel, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1.0, constant: -10).isActive = true

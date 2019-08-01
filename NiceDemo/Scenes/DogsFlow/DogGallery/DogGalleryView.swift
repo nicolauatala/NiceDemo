@@ -48,7 +48,11 @@ class DogGalleryView: UIView {
         shadowContainerView.backgroundColor = .clear
         shadowContainerView.addSketchShadow(color: UIColor.AppColors.primaryColor, alpha: 0.28, x: 0, y: 6, blur: 16, spread: 0)
         addSubview(shadowContainerView)
+        
+        guard let shadowContainerView = shadowContainerView else { return }
+        
         if #available(iOS 11.0, *), DeviceType.hasTopNotch {
+            
             NSLayoutConstraint(item: shadowContainerView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
             NSLayoutConstraint(item: shadowContainerView, attribute: .bottom, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: -24).isActive = true
         } else {
@@ -66,6 +70,9 @@ class DogGalleryView: UIView {
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = 14
         shadowContainerView.addSubview(containerView)
+        
+        guard let containerView = containerView else { return }
+        
         NSLayoutConstraint(item: containerView, attribute: .top, relatedBy: .equal, toItem: shadowContainerView, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: containerView, attribute: .leading, relatedBy: .equal, toItem: shadowContainerView, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: containerView, attribute: .trailing, relatedBy: .equal, toItem: shadowContainerView, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
@@ -79,6 +86,9 @@ class DogGalleryView: UIView {
         noDataLabel.textAlignment = .center
         noDataLabel.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(noDataLabel)
+        
+        guard let noDataLabel = noDataLabel else { return }
+        
         NSLayoutConstraint(item: noDataLabel, attribute: .centerX, relatedBy: .equal, toItem: collectionView, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: noDataLabel, attribute: .centerY, relatedBy: .equal, toItem: collectionView, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
     }
@@ -89,6 +99,9 @@ class DogGalleryView: UIView {
         dogImageView.clipsToBounds = true
         dogImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(dogImageView)
+        
+        guard let dogImageView = dogImageView else { return }
+        
         NSLayoutConstraint(item: dogImageView, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: dogImageView, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: dogImageView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
@@ -106,6 +119,9 @@ class DogGalleryView: UIView {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         containerView.addSubview(collectionView)
+        
+        guard let collectionView = collectionView else { return }
+        
         NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: dogImageView, attribute: .bottom, multiplier: 1.0, constant: 30).isActive = true
         NSLayoutConstraint(item: collectionView, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
@@ -125,6 +141,9 @@ class DogGalleryView: UIView {
         actionButton.addTarget(self, action: #selector(actionButtonTapped(_:)), for: .touchUpInside)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(actionButton)
+        
+        guard let actionButton = actionButton else { return }
+        
         NSLayoutConstraint(item: actionButton, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: actionButton, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true
         NSLayoutConstraint(item: actionButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 54.0).isActive = true

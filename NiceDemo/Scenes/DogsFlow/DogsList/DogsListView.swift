@@ -35,6 +35,9 @@ class DogsListView: UIView {
         tableView.rowHeight = 70
         tableView.contentInset.bottom = 44.0
         addSubview(tableView)
+        
+        guard let tableView = tableView else { return }
+        
         if #available(iOS 11.0, *) {
             NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         }
